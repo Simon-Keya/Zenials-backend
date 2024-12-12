@@ -1,15 +1,17 @@
 import { DataTypes, Model } from 'sequelize';
 import sequelize from '../config/database';
 
-export class Follower extends Model {
+export class Monetization extends Model {
   declare id: number;
   declare userId: number;
-  declare followerId: number;
+  declare contentId: number;
+  declare price: number;
+  declare earned: number;
   declare createdAt?: Date;
   declare updatedAt?: Date;
 }
 
-Follower.init(
+Monetization.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -20,10 +22,18 @@ Follower.init(
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-    followerId: {
+    contentId: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
+    price: {
+      type: DataTypes.FLOAT,
+      allowNull: false,
+    },
+    earned: {
+      type: DataTypes.FLOAT,
+      defaultValue: 0,
+    },
   },
-  { sequelize, modelName: 'Follower', tableName: 'followers', timestamps: true }
+  { sequelize, modelName: 'Monetization', tableName: 'monetizations', timestamps: true }
 );
