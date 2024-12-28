@@ -1,2 +1,2 @@
 # Zenials-backend
-social media contont monetization
+social media content growth and monetization

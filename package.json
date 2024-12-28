@@ -1,9 +1,12 @@
 {
   "name": "zenials-backend",
   "version": "1.0.0",
-  "description": "social media contont monetization",
-  "main": "index.js",
+  "description": "Social media content monetization",
+  "main": "dist/index.js",
   "scripts": {
+    "start": "node dist/index.js",
+    "build": "tsc",
+    "dev": "ts-node src/index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -32,5 +35,8 @@
     "@types/sequelize": "^4.28.20",
     "@types/stripe": "^8.0.416",
     "typescript": "^5.7.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   }
 }
